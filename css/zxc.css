@@ -1,0 +1,303 @@
+:root{
+    --bg-color:hsl(236, 33%, 92%);
+    --main-c:hsl(0, 0%, 98%);
+    --content-cl:#757373;
+    --wid:450px
+}
+
+.mob{
+    display: none;
+}
+
+*{  
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    position: relative;
+    z-index: -1;
+    font-family:  'Josefin Sans', sans-serif;
+    background-color:  var(--bg-color);
+}
+.all-content{
+    position: relative;
+    z-index: -5;
+    height:100vh;
+    max-width: 1442px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    transition: 0.3s;
+}
+.imag-bg{
+    position: absolute;
+}
+.imag-bg img{
+    max-width: 100%;
+}
+.big-content{
+    position: relative;
+    display: flex;
+    z-index: 10;
+    margin-top: 4rem;
+    flex-direction: column;
+    width: var(--wid);
+}
+.big-content .heading{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    position: relative;
+    z-index: 999999;
+    color: hsl(0, 0%, 98%);
+}
+.big-content .heading h1{
+    letter-spacing: 5px;
+}
+.big-content .heading img{
+    cursor: pointer;
+    transition: 0.3s;
+}
+.big-content .text {
+    position: relative;
+    margin-top: 40px;
+}
+.big-content .text .texter{
+    width: var(--wid);
+    outline: none;
+    font-size: 18px;
+    padding: 10px;
+    padding-left: 50px;
+    border-radius: 4px;
+    border: 1px solid #aaaaaa6b;
+    background-color: var(--main-c);
+    transition: 0.3s;
+    color: var(--content-cl);
+}
+.big-content .text .btn{
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    width: 40px;
+    height: 41px;
+    cursor: pointer;
+}
+.big-content .text .botoo{
+    position: absolute;
+    left: 5px;
+    bottom: 5px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid #aaaaaa6b;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.tasks{
+    margin-top: 2.5rem;
+    transition: 0.3s;
+    max-height: 350px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    display:none;
+    background-color: var(--bg-color);
+}
+.footer{
+    width: var(--wid);
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--main-c);
+    font-size:12px;
+    padding: 10px;
+    color:var(--content-cl);
+    transition: 0.2s;
+}
+.task{
+    width: var(--wid);
+    font-size:20px;
+    padding: 10px;
+    color:var(--content-cl);
+    transition:0.3s;
+    background-color: var(--main-c);
+    padding-left: 50px;
+    border-bottom: 1px solid #aaaaaa6b;
+}
+
+
+
+.over-flow-h{
+    overflow-y: hidden;
+}
+.flex{
+    display: block !important;
+}
+
+.task{
+    position: relative;
+    cursor: pointer;
+}
+.task .big-o{
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 45px;
+    cursor: pointer;
+}
+
+.task .big-o span{
+    position: absolute;
+    top: 50%;
+    left: 7px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid #aaaaaa6b;
+    cursor: pointer;
+    transform: translateY(-50%);
+}
+.task .remove{
+    position: absolute;
+    top: 50%;
+    right: 35px;
+    font-size: 41px;
+    color: #aaaaaa6b;
+    cursor: pointer;
+    transform: translateY(-50%);
+}
+
+/* .big-o span:hover ::before{
+    display: block;
+} */
+
+
+
+.done{
+    text-decoration: line-through;
+    background-color: #5d555536;
+}
+.done .big-o span{
+    /* background-image:o-gradient( hsl(192, 100%, 67%) , hsl(280, 87%, 65%),  hsl(192, 100%, 67%)) */
+    background-image:linear-gradient(140deg, hsl(280, 87%, 65%) -10%,hsl(192, 100%, 67%));
+}
+
+.footer{
+    font-size: 13px;
+}
+.footer .clear-btn{
+    cursor: pointer;
+    
+}
+.footer .selector{
+    display: flex;
+    gap: 15px;
+}
+.footer .selector span{
+    cursor: pointer;
+    padding-block: 5px;
+    transition: 0.3s;
+}
+.footer .selector span:not(.reactive):hover{
+    color: rgb(19, 18, 18);
+}
+.reactive{
+    color: rgb(48, 48, 158);
+}
+.number-of-items{
+    display: flex;
+    align-items: center;
+}
+.clear-btn{
+    display: flex;
+    align-items: center;
+}
+
+@media screen and (max-width:590px) {
+    .mob{
+        display: block;
+        width: 500px;
+    }
+    .des{
+        display: none;
+    }
+    .tasks{
+        margin-top: 100px;
+    }
+    .all-content .big-content .text .texter{
+        font-size: 17px;
+        padding: 7px ;
+        padding-left: 40px;
+    }
+    .big-content .text .btn {
+        height: 36px;
+    }
+    .big-content .text .botoo {
+        height: 20px;
+        width: 20px;
+    }
+    .tasks .task{
+        font-size: 17px;
+        padding: 7px ;
+        padding-left: 40px;
+    }
+    .tasks .task .big-o{
+        height: 36px;
+        width:40px ;
+    }
+    .tasks .task .big-o span{
+        height: 27px;
+        width:27px ;
+    }
+    .task .remove {
+        font-size: 35px;
+    }
+
+
+}
+@media screen and (max-width:516px) {
+    :root{
+
+        --wid:400px
+    }
+    /* .all-content .big-content .text .texter{
+        font-size: 17px;
+        padding: 7px ;
+    } */
+}
+@media screen and (max-width:420px) {
+    :root{
+
+        --wid:350px
+    }
+}
+@media screen and (max-width:385px) {
+    :root{
+
+        --wid:320px
+    }
+    .footer{
+        font-size: 10px;
+    }
+}
+@media screen and (max-width:334px) {
+    :root{
+
+        --wid:290px
+    }
+
+}
+@media screen and (max-width:300px) {
+    :root{
+        
+        --wid:250px
+    }
+    .footer{
+        font-size: 8.7px;
+    }
+
+}
